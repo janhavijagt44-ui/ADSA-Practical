@@ -1,0 +1,15 @@
+programs = [5, 10, 3, 8, 2]
+
+programs.sort()
+
+total = 0
+retrieval_time = 0
+
+for length in programs:
+    retrieval_time += length
+    total += retrieval_time
+
+mrt = total / len(programs)
+
+print("Optimal storage order:", programs)
+print("Mean Retrieval Time:", mrt)
