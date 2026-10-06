@@ -1,0 +1,8 @@
+def hash_function(key, size):
+    return key % size
+
+size = 10
+keys = [25, 35, 42, 56]
+
+for key in keys:
+    print(key, "->", hash_function(key, size))
