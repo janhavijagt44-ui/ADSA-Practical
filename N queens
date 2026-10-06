@@ -1,0 +1,22 @@
+def solve(n):
+    board = [-1] * n
+
+    def backtrack(row):
+        if row == n:
+            print(board)
+            return True
+
+        for col in range(n):
+            if col not in board[:row] and all(
+                abs(row - r) != abs(col - board[r]) for r in range(row)
+            ):
+                board[row] = col
+                if backtrack(row + 1):
+                    return True
+                board[row] = -1
+
+        return False
+
+    backtrack(0)
+
+solve(4)
